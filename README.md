@@ -1,4 +1,4 @@
-CKFinder for Play Framework 2 for Scala
-=======================================
+Generic Play Template for Subprojects
+=====================================
 
-Let's see how this turns out.
+Still a bit raw.
