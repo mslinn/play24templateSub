@@ -11,7 +11,7 @@ lazy val demo     = (project in file("modules/demo"))    .enablePlugins(PlayScal
 lazy val root = (project in file("."))
   .enablePlugins(PlayScala)
   .aggregate(demo, ckfinder)
-  .dependsOn(ckfinder)
+  .dependsOn(demo, ckfinder)
 
 scalacOptions ++= Seq("-deprecation", "-encoding", "UTF-8", "-feature", "-target:jvm-1.6", "-unchecked",
   "-Ywarn-adapted-args", "-Ywarn-value-discard", "-Xlint")

@@ -3,7 +3,6 @@ package controllers.demo
 import javax.inject.Inject
 import play.api.i18n.{I18nSupport, MessagesApi}
 import play.api.mvc.{Action, Controller}
-import play.twirl.api.Html
 import scala.concurrent.Future
 import scala.language.postfixOps
 
