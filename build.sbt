@@ -1,8 +1,8 @@
 import sbt._
 import sbt.Keys._
 
-name         := "ckfinder_play"
-herokuAppName in Compile := "ckfinder_play"
+name         := "changeMe"
+herokuAppName in Compile := "changeMe"
 Common.settings
 
 lazy val ckfinder = (project in file("modules/ckfinder")).enablePlugins(PlayScala)
