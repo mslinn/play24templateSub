@@ -1,5 +1,5 @@
-@(title: String, user: Option[models.User] = None)(content: Html)(implicit messages: Messages)
-@import controllers.auth.routes. { SilhouetteController => authRoutes }
+@(title: String="CKFinder for Play Demo")(content: Html=HtmlFormat.empty)(implicit messages: Messages)
+@import controllers.ckfinder.routes. { CKFinderController => authRoutes }
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -37,13 +37,7 @@
                         <li><a href="https://github.com/mslinn/play-silhouette-slick-seed" target="psss">GitHub</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                    @user.map { u =>
-                    <li><a href="@authRoutes.index">@u.fullName</a></li>
-                    <li><a href="@authRoutes.signOut">@Messages("sign.out")</a></li>
-                    }.getOrElse {
-                        <li><a href="@authRoutes.signIn">@Messages("sign.in")</a></li>
-                        <li><a href="@authRoutes.signUp">@Messages("sign.up")</a></li>
-                    }
+                      <li>menu goes here</li>
                     </ul>
                 </nav>
             </div>

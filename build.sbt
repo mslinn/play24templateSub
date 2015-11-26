@@ -1,16 +1,17 @@
 import sbt._
 import sbt.Keys._
 
-name         := "ckfinder"
-herokuAppName in Compile := "ckfinder"
+name         := "ckfinder_play"
+herokuAppName in Compile := "ckfinder_play"
 Common.settings
 
-lazy val demo = (project in file("modules/demo")).enablePlugins(PlayScala).dependsOn(ckfinder)
-lazy val ckfinder  = (project in file("modules/ckfinder")) .enablePlugins(PlayScala)
+lazy val ckfinder = (project in file("modules/ckfinder")).enablePlugins(PlayScala)
+lazy val demo     = (project in file("modules/demo"))    .enablePlugins(PlayScala).dependsOn(ckfinder)
 
 lazy val root = (project in file("."))
   .enablePlugins(PlayScala)
   .aggregate(demo, ckfinder)
+  .dependsOn(ckfinder)
 
 scalacOptions ++= Seq("-deprecation", "-encoding", "UTF-8", "-feature", "-target:jvm-1.6", "-unchecked",
   "-Ywarn-adapted-args", "-Ywarn-value-discard", "-Xlint")
@@ -18,7 +19,6 @@ scalacOptions ++= Seq("-deprecation", "-encoding", "UTF-8", "-feature", "-target
 javacOptions ++= Seq("-Xlint:deprecation", "-Xlint:unchecked", "-source", "1.7", "-target", "1.7", "-g:vars")
 
 routesGenerator := InjectedRoutesGenerator
-enablePlugins(ApiMappings)
 
 javaOptions in Test ++= Seq("-Dconfig.file=conf/dev.conf")
 logBuffered in Test := false

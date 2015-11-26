@@ -11,25 +11,9 @@ resolvers ++= Seq(
 
 addSbtPlugin("com.typesafe.play" % "sbt-plugin"       % "2.4.3")
 
-// optional plugins
-addSbtPlugin("com.typesafe.sbt"  % "sbt-coffeescript" % "1.0.0")
-addSbtPlugin("com.typesafe.sbt"  % "sbt-less"         % "1.0.6")
-addSbtPlugin("com.typesafe.sbt"  % "sbt-jshint"       % "1.0.3")
-//addSbtPlugin("com.typesafe.sbt"  % "sbt-rjs"          % "1.0.7")
-addSbtPlugin("com.typesafe.sbt" % "sbt-digest" % "1.0.0")
-addSbtPlugin("com.typesafe.sbt" % "sbt-mocha" % "1.1.0")
-
 // See https://github.com/jrudolph/sbt-dependency-graph
 addSbtPlugin("net.virtual-void" % "sbt-dependency-graph" % "0.8.0")
 
 addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "4.0.0")
 
 addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.1.8")
-
-addSbtPlugin("de.johoop" % "findbugs4sbt" % "1.4.0")
-
-addSbtPlugin("com.thoughtworks.sbt-api-mappings" % "sbt-api-mappings" % "0.2.0")
-
-libraryDependencies ++= Seq(
-  "com.puppycrawl.tools" % "checkstyle" % "6.3"
-)
