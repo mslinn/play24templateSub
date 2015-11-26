@@ -1,3 +1,6 @@
 # This file defines all application routes (Higher priority routes first)
-GET         /                           controllers.DemoController.hello(name)
-GET         /help                       controllers.DemoController.help()
+GET         /                           @controllers.demo.DemoController.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET         /assets/*file               controllers.Assets.at(path="/public", file)
+GET         /webjars/*file              controllers.WebJarAssets.at(file)
