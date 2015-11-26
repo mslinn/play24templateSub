@@ -1,0 +1,3 @@
+# This file defines all application routes (Higher priority routes first)
+GET         /                           controllers.DemoController.hello(name)
+GET         /help                       controllers.DemoController.help()

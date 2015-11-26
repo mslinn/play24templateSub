@@ -1,8 +1,11 @@
-# This file defines all application routes (Higher priority routes first)
-GET         /                                            controllers.Application.hello(name)
-GET         /help                                        controllers.Application.help()
+
+# Define all application routes (Higher priority routes first)
+
+# Delegate routes to subprojects
+->    /               demo.Routes
+->    /ckfinder       ckfinder.Routes
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                                controllers.Assets.at(path="/public", file)
 GET         /webjars/*file                               controllers.WebJarAssets.at(file)
-
